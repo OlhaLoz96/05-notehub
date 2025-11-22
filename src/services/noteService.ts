@@ -39,9 +39,6 @@ export const createNote = async (newNote: NoteFormValues): Promise<Note> => {
 
 export const deleteNote = async (noteId: Note["id"]): Promise<Note> => {
   const response = await axios.delete<Note>(`/notes/${noteId}`, {
-    params: {
-      id: noteId,
-    },
     headers: {
       Authorization: `Bearer ${myToken}`,
     },

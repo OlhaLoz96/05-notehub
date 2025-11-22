@@ -36,6 +36,7 @@ function NoteForm({ onClose }: NoteFormProps) {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["notes"] });
       toast.success("Note added successfully");
+      onClose();
     },
     onError: (error) => {
       console.log("Error", error);
@@ -50,7 +51,6 @@ function NoteForm({ onClose }: NoteFormProps) {
     // console.log("Values:", values);
     actions.resetForm();
     mutation.mutate(values);
-    onClose();
   };
 
   return (

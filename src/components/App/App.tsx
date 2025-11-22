@@ -20,6 +20,7 @@ function App() {
   const updateSearchQuery = useDebouncedCallback(
     (event: React.ChangeEvent<HTMLInputElement>) => {
       setSearchQuery(event.target.value);
+      setCurrentPage(1);
     },
     300
   );
